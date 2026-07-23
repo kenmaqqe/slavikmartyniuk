@@ -3,6 +3,28 @@
 import { motion } from "framer-motion";
 import { shows } from "@/data/shows";
 
+function TicketButton({ href, label }: { href: string; label: string }) {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ x: 4 }}
+      whileTap={{ scale: 0.96 }}
+      className="group/btn inline-flex items-center gap-2 min-h-[44px] text-xs tracking-widest uppercase text-accent transition-colors duration-300"
+    >
+      <span>{label}</span>
+      <motion.span
+        className="inline-block"
+        initial={{ x: 0 }}
+        whileHover={{ x: 3 }}
+      >
+        →
+      </motion.span>
+    </motion.a>
+  );
+}
+
 export default function Tour() {
   return (
     <section id="tour" className="py-20 md:py-36 px-5 md:px-12 lg:px-24">
@@ -46,14 +68,7 @@ export default function Tour() {
                     {show.venue}
                   </p>
                   {show.status === "available" && show.ticketUrl && show.ticketUrl !== "#" ? (
-                    <a
-                      href={show.ticketUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs tracking-widest uppercase text-accent border border-accent/30 rounded-full hover:bg-accent/10 active:scale-[0.97] transition-all duration-300"
-                    >
-                      Купити →
-                    </a>
+                    <TicketButton href={show.ticketUrl} label="Купити" />
                   ) : show.status === "soldOut" ? (
                     <span className="inline-flex items-center min-h-[44px] text-xs tracking-widest uppercase text-text-secondary/30">
                       Sold Out
@@ -80,14 +95,7 @@ export default function Tour() {
                   </div>
                   <div className="w-[15%] text-right">
                     {show.status === "available" && show.ticketUrl && show.ticketUrl !== "#" ? (
-                      <a
-                        href={show.ticketUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs tracking-widest uppercase text-accent hover:brightness-110 transition-all"
-                      >
-                        Купити →
-                      </a>
+                      <TicketButton href={show.ticketUrl} label="Купити" />
                     ) : (
                       <span className="text-xs tracking-widest uppercase text-text-secondary/30">
                         Sold Out
