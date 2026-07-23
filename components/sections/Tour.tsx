@@ -3,35 +3,6 @@
 import { motion } from "framer-motion";
 import { shows } from "@/data/shows";
 
-function TicketButton({ href, label }: { href: string; label: string }) {
-  return (
-    <motion.a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: 1.04 }}
-      whileTap={{ scale: 0.97 }}
-      className="group/btn relative inline-flex items-center gap-2.5 min-h-[44px] px-5 py-2.5 overflow-hidden rounded-full border border-accent/40 text-xs tracking-widest uppercase text-accent transition-colors duration-500"
-    >
-      {/* Sliding background */}
-      <span className="absolute inset-0 bg-accent/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]" />
-
-      {/* Glow pulse on hover */}
-      <span className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_20px_rgba(24,199,193,0.15)]" />
-
-      <span className="relative z-10 group-hover/btn:text-white transition-colors duration-500">
-        {label}
-      </span>
-      <motion.span
-        className="relative z-10 inline-block group-hover/btn:text-white transition-colors duration-500"
-        whileHover={{ x: 4 }}
-      >
-        →
-      </motion.span>
-    </motion.a>
-  );
-}
-
 export default function Tour() {
   return (
     <section id="tour" className="py-20 md:py-36 px-5 md:px-12 lg:px-24">
@@ -56,37 +27,40 @@ export default function Tour() {
               viewport={{ once: true, margin: "-20px" }}
               transition={{ duration: 0.35, delay: index * 0.04 }}
             >
-              <div
-                className={`py-5 md:py-6 border-b border-white/10 ${
-                  show.status === "available" ? "" : "opacity-30"
+              <motion.a
+                href={show.status === "available" && show.ticketUrl && show.ticketUrl !== "#" ? show.ticketUrl : undefined}
+                target={show.status === "available" ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                whileHover={{ backgroundColor: "rgba(24,199,193,0.03)" }}
+                whileTap={{ scale: 0.995 }}
+                className={`group relative block py-5 md:py-6 border-b border-white/10 transition-colors duration-500 ${
+                  show.status !== "available" ? "opacity-30 pointer-events-none" : "cursor-pointer"
                 }`}
               >
                 {/* Mobile layout */}
-                <div className="md:hidden">
+                <div className="md:hidden px-1">
                   <div className="flex items-baseline justify-between gap-4 mb-2">
-                    <span className="font-heading text-2xl uppercase">
+                    <span className="font-heading text-2xl uppercase group-hover:text-accent transition-colors duration-500">
                       {show.city}
                     </span>
                     <span className="text-text-secondary text-sm flex-shrink-0">
                       {show.date}
                     </span>
                   </div>
-                  <p className="text-text-secondary text-sm mb-3">
-                    {show.venue}
-                  </p>
-                  {show.status === "available" && show.ticketUrl && show.ticketUrl !== "#" ? (
-                    <TicketButton href={show.ticketUrl} label="Купити" />
-                  ) : show.status === "soldOut" ? (
-                    <span className="inline-flex items-center min-h-[44px] text-xs tracking-widest uppercase text-text-secondary/30">
-                      Sold Out
+                  <div className="flex items-center justify-between">
+                    <p className="text-text-secondary text-sm">
+                      {show.venue}
+                    </p>
+                    <span className="text-xs tracking-widest uppercase text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-8px] group-hover:translate-x-0">
+                      Купити →
                     </span>
-                  ) : null}
+                  </div>
                 </div>
 
                 {/* Desktop layout */}
-                <div className="hidden md:flex md:items-center">
+                <div className="hidden md:flex md:items-center px-1">
                   <div className="w-[30%]">
-                    <span className="font-heading text-3xl uppercase">
+                    <span className="font-heading text-3xl uppercase group-hover:text-accent transition-colors duration-500">
                       {show.city}
                     </span>
                   </div>
@@ -101,16 +75,12 @@ export default function Tour() {
                     </span>
                   </div>
                   <div className="w-[15%] text-right">
-                    {show.status === "available" && show.ticketUrl && show.ticketUrl !== "#" ? (
-                      <TicketButton href={show.ticketUrl} label="Купити" />
-                    ) : (
-                      <span className="text-xs tracking-widest uppercase text-text-secondary/30">
-                        Sold Out
-                      </span>
-                    )}
+                    <span className="text-xs tracking-widest uppercase text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-8px] group-hover:translate-x-0">
+                      Купити →
+                    </span>
                   </div>
                 </div>
-              </div>
+              </motion.a>
             </motion.div>
           ))}
         </div>
