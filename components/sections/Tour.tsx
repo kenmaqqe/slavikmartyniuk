@@ -9,15 +9,22 @@ function TicketButton({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      whileHover={{ x: 4 }}
-      whileTap={{ scale: 0.96 }}
-      className="group/btn inline-flex items-center gap-2 min-h-[44px] text-xs tracking-widest uppercase text-accent transition-colors duration-300"
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.97 }}
+      className="group/btn relative inline-flex items-center gap-2.5 min-h-[44px] px-5 py-2.5 overflow-hidden rounded-full border border-accent/40 text-xs tracking-widest uppercase text-accent transition-colors duration-500"
     >
-      <span>{label}</span>
+      {/* Sliding background */}
+      <span className="absolute inset-0 bg-accent/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]" />
+
+      {/* Glow pulse on hover */}
+      <span className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_20px_rgba(24,199,193,0.15)]" />
+
+      <span className="relative z-10 group-hover/btn:text-white transition-colors duration-500">
+        {label}
+      </span>
       <motion.span
-        className="inline-block"
-        initial={{ x: 0 }}
-        whileHover={{ x: 3 }}
+        className="relative z-10 inline-block group-hover/btn:text-white transition-colors duration-500"
+        whileHover={{ x: 4 }}
       >
         →
       </motion.span>
