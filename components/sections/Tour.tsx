@@ -51,7 +51,7 @@ export default function Tour() {
                     <p className="text-text-secondary text-sm">
                       {show.venue}
                     </p>
-                    <span className="text-xs tracking-widest uppercase text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-8px] group-hover:translate-x-0">
+                    <span className="text-xs tracking-widest uppercase text-accent">
                       Купити →
                     </span>
                   </div>
@@ -75,7 +75,7 @@ export default function Tour() {
                     </span>
                   </div>
                   <div className="w-[15%] text-right">
-                    <span className="text-xs tracking-widest uppercase text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-8px] group-hover:translate-x-0">
+                    <span className="text-xs tracking-widest uppercase text-accent">
                       Купити →
                     </span>
                   </div>
