@@ -9,16 +9,20 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden">
       {/* Mobile */}
       <div className="md:hidden relative min-h-screen flex flex-col">
-        {/* Photo — absolute, bottom */}
+        {/* Photo — absolute, bottom, with floor shadow */}
         <div className="absolute inset-x-0 bottom-0 h-[55vh] z-0">
+          {/* Floor shadow */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06)_0%,transparent_70%)]" />
+          {/* Decorative line — "floor" */}
+          <div className="absolute bottom-6 left-[10%] right-[10%] h-px bg-white/[0.06]" />
           <Image
             src="/hero.png"
             alt="Славік Мартинюк"
             fill
             className="object-contain object-bottom"
             priority
-            quality={95}
-            sizes="100vw"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 60vw"
           />
         </div>
 
@@ -28,7 +32,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-heading text-[3.2rem] leading-[0.9] uppercase"
+            className="font-heading leading-[0.9] uppercase"
+            style={{ fontSize: "clamp(2.8rem, 10vw, 3.5rem)" }}
           >
             Славік
             <br />
@@ -48,11 +53,11 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-6 flex items-center gap-4"
+            className="mt-6 flex flex-col gap-3 w-full max-w-[280px]"
           >
             <button
               onClick={() => scrollTo("tour")}
-              className="bg-accent text-black text-xs font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all duration-300"
+              className="w-full bg-accent text-black text-sm font-semibold py-3.5 rounded-full hover:brightness-110 active:scale-[0.98] transition-all duration-300 min-h-[44px]"
             >
               Купити квитки
             </button>
@@ -60,7 +65,7 @@ export default function Hero() {
               href="https://www.youtube.com/@slavikmartyniuk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-text-secondary hover:text-white transition-colors duration-300"
+              className="w-full text-center text-sm text-text-secondary hover:text-white transition-colors duration-300 py-3 min-h-[44px] flex items-center justify-center"
             >
               Дивитись виступ →
             </a>
@@ -76,7 +81,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-heading text-[5rem] lg:text-[6.5rem] xl:text-[7.5rem] leading-[0.88] uppercase"
+            className="font-heading leading-[0.88] uppercase"
+            style={{ fontSize: "clamp(4rem, 7vw, 7.5rem)" }}
           >
             Славік
             <br />
@@ -100,7 +106,7 @@ export default function Hero() {
           >
             <button
               onClick={() => scrollTo("tour")}
-              className="bg-accent text-black text-sm font-semibold px-7 py-3.5 rounded-full hover:brightness-110 transition-all duration-300"
+              className="bg-accent text-black text-sm font-semibold px-7 py-3.5 rounded-full hover:brightness-110 transition-all duration-300 min-h-[44px]"
             >
               Купити квитки
             </button>
@@ -115,13 +121,16 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Photo — 60% */}
+        {/* Photo — 60%, with floor shadow */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-[60%] relative h-[85vh]"
         >
+          {/* Floor shadow */}
+          <div className="absolute bottom-8 left-[5%] right-[5%] h-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04)_0%,transparent_70%)]" />
+          <div className="absolute bottom-12 left-0 right-0 h-px bg-white/[0.05]" />
           <Image
             src="/hero.png"
             alt="Славік Мартинюк"
@@ -129,7 +138,7 @@ export default function Hero() {
             className="object-contain object-bottom"
             priority
             quality={95}
-            sizes="60vw"
+            sizes="(min-width: 768px) 60vw, 100vw"
           />
         </motion.div>
       </div>

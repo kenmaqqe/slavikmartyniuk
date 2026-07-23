@@ -10,13 +10,13 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="py-16 md:py-24 px-6 md:px-12 lg:px-24 border-t border-white/5">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
-        <div>
-          <p className="font-heading text-2xl md:text-3xl uppercase tracking-wide mb-5">
+    <footer id="footer" className="py-16 md:py-24 px-5 md:px-12 lg:px-24 border-t border-white/5">
+      <div className="max-w-5xl mx-auto text-center md:text-left md:flex md:flex-row md:items-end md:justify-between gap-8">
+        <div className="flex flex-col items-center md:items-start gap-5">
+          <p className="font-heading text-2xl md:text-3xl uppercase tracking-wide">
             Славік Мартинюк
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-6">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -24,15 +24,15 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="text-text-secondary hover:text-white transition-colors duration-300"
+                className="text-text-secondary hover:text-white transition-colors duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
               >
-                <social.icon size={16} />
+                <social.icon size={18} />
               </a>
             ))}
           </div>
         </div>
 
-        <p className="text-text-secondary/30 text-xs">© {new Date().getFullYear()}</p>
+        <p className="text-text-secondary/30 text-xs mt-8 md:mt-0">© {new Date().getFullYear()}</p>
       </div>
     </footer>
   );
