@@ -12,7 +12,7 @@ export default function Hero() {
         {/* Photo — top */}
         <div className="relative w-full h-[50vh] mt-14 z-0">
           <Image
-            src="/hero.png"
+            src="/hero.webp"
             alt="Славік Мартинюк"
             fill
             className="object-contain object-bottom"
@@ -131,7 +131,7 @@ export default function Hero() {
           <div className="absolute bottom-8 left-[5%] right-[5%] h-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04)_0%,transparent_70%)]" />
           <div className="absolute bottom-12 left-0 right-0 h-px bg-white/[0.05]" />
           <Image
-            src="/hero.png"
+            src="/hero.webp"
             alt="Славік Мартинюк"
             fill
             className="object-contain object-bottom"
