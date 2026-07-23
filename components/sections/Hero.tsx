@@ -7,9 +7,10 @@ import { scrollTo } from "@/lib/scrollTo";
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Mobile: photo behind text, absolute */}
-      <div className="md:hidden absolute inset-0 flex items-end justify-center pt-20">
-        <div className="relative w-full h-[70vh]">
+      {/* Mobile */}
+      <div className="md:hidden relative min-h-screen flex flex-col">
+        {/* Photo — absolute, bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-[55vh] z-0">
           <Image
             src="/hero.png"
             alt="Славік Мартинюк"
@@ -20,16 +21,14 @@ export default function Hero() {
             sizes="100vw"
           />
         </div>
-      </div>
 
-      {/* Mobile content */}
-      <div className="md:hidden relative z-10 flex flex-col justify-between min-h-screen px-6 pt-28 pb-12">
-        <div>
+        {/* Text — top */}
+        <div className="relative z-10 flex-1 flex flex-col justify-start px-5 pt-24 pb-8">
           <motion.h1
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-heading text-[4rem] leading-[0.88] uppercase"
+            className="font-heading text-[3.2rem] leading-[0.9] uppercase"
           >
             Славік
             <br />
@@ -40,7 +39,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-text-secondary text-base mt-5"
+            className="text-text-secondary text-sm mt-4"
           >
             Новий стендап-тур
           </motion.p>
@@ -49,11 +48,11 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-8 flex flex-wrap items-center gap-5"
+            className="mt-6 flex items-center gap-4"
           >
             <button
               onClick={() => scrollTo("tour")}
-              className="bg-accent text-black text-sm font-semibold px-7 py-3.5 rounded-full hover:brightness-110 transition-all duration-300"
+              className="bg-accent text-black text-xs font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all duration-300"
             >
               Купити квитки
             </button>
@@ -61,7 +60,7 @@ export default function Hero() {
               href="https://www.youtube.com/@slavikmartyniuk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-text-secondary hover:text-white transition-colors duration-300"
+              className="text-xs text-text-secondary hover:text-white transition-colors duration-300"
             >
               Дивитись виступ →
             </a>
@@ -69,7 +68,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Desktop: split layout */}
+      {/* Desktop / Tablet */}
       <div className="hidden md:flex w-full max-w-[1400px] mx-auto px-12 lg:px-24 items-center h-screen">
         {/* Text — 40% */}
         <div className="w-[40%] pr-8 lg:pr-16 z-10">
