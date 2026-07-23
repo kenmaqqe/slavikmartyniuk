@@ -1,10 +1,11 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/sections/Hero";
 import Tour from "@/components/sections/Tour";
-import PhotoSection from "@/components/sections/PhotoSection";
+import PhotoBanner from "@/components/sections/PhotoBanner";
 import Video from "@/components/sections/Video";
-import Bio from "@/components/sections/Bio";
-import Stats from "@/components/sections/Stats";
+import About from "@/components/sections/About";
+import Quote from "@/components/sections/Quote";
+import Gallery from "@/components/sections/Gallery";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
@@ -14,10 +15,11 @@ export default function Home() {
       <main>
         <Hero />
         <Tour />
-        <PhotoSection />
+        <PhotoBanner />
         <Video />
-        <Bio />
-        <Stats />
+        <About />
+        <Quote />
+        <Gallery />
         <Footer />
       </main>
     </>
