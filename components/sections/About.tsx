@@ -38,12 +38,40 @@ export default function About() {
 
           <div className="space-y-5 text-text-secondary text-base md:text-lg leading-relaxed">
             <p>
-              Стендап-комік, автор шоу «Медичні історії» — поєднання гумору та
-              медицини, яке збирає зали по всій Україні.
+              Український стендап-комік. Автор шоу{' '}
+              <span className="text-white">«Медичні Історії»</span>,{' '}
+              <span className="text-white">«Я Ніколи Не…»</span> та{' '}
+              <span className="text-white">«Комедійна Кафедра»</span>.
             </p>
             <p>
-              Кожен виступ — це історія, яка лікує краще за будь-які ліки.
-              Чесний, тонкий, іноді гострий гумор, який запам&apos;ятовується.
+              Тут ви знайдете багато стендапу, виступів та шоу, які збирають
+              зали по всій Україні.
+            </p>
+          </div>
+
+          <div className="mt-10 pt-8 border-t border-white/10">
+            <p className="text-text-secondary text-sm">
+              Співпраця:{" "}
+              <a
+                href="https://t.me/kiriill_rad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-accent transition-colors"
+              >
+                @Kirill_Rad
+              </a>{" "}
+              (Telegram)
+            </p>
+            <p className="text-text-secondary text-sm mt-2">
+              Підтримати канал:{" "}
+              <a
+                href="https://base.monobank.ua/266fbkhtqpLWST"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:brightness-110 transition-all"
+              >
+                Monobank →
+              </a>
             </p>
           </div>
         </motion.div>

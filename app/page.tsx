@@ -4,8 +4,6 @@ import Tour from "@/components/sections/Tour";
 import PhotoBanner from "@/components/sections/PhotoBanner";
 import Video from "@/components/sections/Video";
 import About from "@/components/sections/About";
-import Quote from "@/components/sections/Quote";
-import Gallery from "@/components/sections/Gallery";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
@@ -18,8 +16,6 @@ export default function Home() {
         <PhotoBanner />
         <Video />
         <About />
-        <Quote />
-        <Gallery />
         <Footer />
       </main>
     </>
