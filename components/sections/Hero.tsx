@@ -45,7 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-text-secondary text-sm mt-4"
           >
-            Новий стендап-тур
+            Ставить діагноз вашому дню — гумор без побічних ефектів
           </motion.p>
 
           <motion.div
@@ -94,7 +94,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-text-secondary text-lg mt-8"
           >
-            Новий стендап-тур
+            Ставить діагноз вашому дню — гумор без побічних ефектів
           </motion.p>
 
           <motion.div
