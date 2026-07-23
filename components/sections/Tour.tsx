@@ -12,10 +12,10 @@ export default function Tour() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl uppercase tracking-tight mb-12 md:mb-20"
+          className="font-heading uppercase tracking-tight mb-12 md:mb-20"
           style={{ fontSize: "clamp(2.8rem, 8vw, 5rem)" }}
         >
-          Концерти
+          Афіша
         </motion.h2>
 
         <div className="border-t border-white/10">
@@ -37,7 +37,7 @@ export default function Tour() {
                   show.status !== "available" ? "opacity-30 pointer-events-none" : "cursor-pointer"
                 }`}
               >
-                {/* Mobile layout */}
+                {/* Mobile */}
                 <div className="md:hidden px-1">
                   <div className="flex items-baseline justify-between gap-4 mb-2">
                     <span className="font-heading text-2xl uppercase group-hover:text-accent transition-colors duration-500">
@@ -48,16 +48,14 @@ export default function Tour() {
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <p className="text-text-secondary text-sm">
-                      {show.venue}
-                    </p>
+                    <p className="text-text-secondary text-sm">{show.venue}</p>
                     <span className="text-xs tracking-widest uppercase text-accent">
                       Купити →
                     </span>
                   </div>
                 </div>
 
-                {/* Desktop layout */}
+                {/* Desktop */}
                 <div className="hidden md:flex md:items-center px-1">
                   <div className="w-[30%]">
                     <span className="font-heading text-3xl uppercase group-hover:text-accent transition-colors duration-500">
@@ -65,14 +63,10 @@ export default function Tour() {
                     </span>
                   </div>
                   <div className="w-[20%]">
-                    <span className="text-text-secondary text-sm">
-                      {show.date}
-                    </span>
+                    <span className="text-text-secondary text-sm">{show.date}</span>
                   </div>
                   <div className="w-[35%]">
-                    <span className="text-text-secondary text-sm">
-                      {show.venue}
-                    </span>
+                    <span className="text-text-secondary text-sm">{show.venue}</span>
                   </div>
                   <div className="w-[15%] text-right">
                     <span className="text-xs tracking-widest uppercase text-accent">

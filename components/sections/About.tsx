@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-36 px-5 md:px-12 lg:px-24">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+    <section id="about" className="py-24 md:py-40 px-5 md:px-12 lg:px-24">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
         {/* Photo */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -25,7 +25,7 @@ export default function About() {
           />
         </motion.div>
 
-        {/* Text */}
+        {/* Text — bold, minimal */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,27 +33,29 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="max-w-prose"
         >
-          <h2
-            className="font-heading uppercase tracking-tight mb-8 md:mb-12"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)" }}
+          <p
+            className="font-heading uppercase leading-[1.05] tracking-tight mb-10 md:mb-14"
+            style={{ fontSize: "clamp(1.8rem, 5vw, 3rem)" }}
           >
-            Про Славіка
-          </h2>
+            Я той самий хлопець,
+            <br />
+            який змушує людей
+            <br />
+            сміятися
+            <br />
+            <span className="text-text-secondary">з власних проблем.</span>
+          </p>
 
-          <div className="space-y-5 text-text-secondary text-base md:text-lg leading-relaxed">
+          <div className="text-text-secondary text-base leading-relaxed mb-10">
             <p>
               Український стендап-комік. Автор шоу{' '}
               <span className="text-white">«Медичні Історії»</span>,{' '}
               <span className="text-white">«Я Ніколи Не…»</span> та{' '}
               <span className="text-white">«Комедійна Кафедра»</span>.
             </p>
-            <p>
-              Тут ви знайдете багато стендапу, виступів та шоу, які збирають
-              зали по всій Україні.
-            </p>
           </div>
 
-          <div className="mt-10 pt-8 border-t border-white/10 space-y-4">
+          <div className="pt-8 border-t border-white/10 space-y-4">
             <a
               href="https://t.me/kiriill_rad"
               target="_blank"
@@ -61,8 +63,7 @@ export default function About() {
               className="flex items-center gap-2 text-text-secondary text-sm hover:text-white transition-colors min-h-[44px]"
             >
               Співпраця:{" "}
-              <span className="text-white">@Kirill_Rad</span>{" "}
-              <span className="text-text-secondary/50">(Telegram)</span>
+              <span className="text-white">@Kirill_Rad</span>
             </a>
             <a
               href="https://base.monobank.ua/266fbkhtqpLWST"

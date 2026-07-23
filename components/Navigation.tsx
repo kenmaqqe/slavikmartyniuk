@@ -8,7 +8,6 @@ const navLinks = [
   { label: "Концерти", target: "tour" },
   { label: "Відео", target: "video" },
   { label: "Про мене", target: "about" },
-  { label: "Контакти", target: "footer" },
 ] as const;
 
 export default function Navigation() {
@@ -67,7 +66,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Desktop social */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-6">
             <a
               href="https://www.instagram.com/cpt.guy/"
@@ -87,29 +86,37 @@ export default function Navigation() {
             </a>
           </div>
 
-          {/* Mobile burger — min 44px tap target */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative w-11 h-11 flex items-center justify-center"
-            aria-label="Menu"
-          >
-            <div className="flex flex-col gap-[5px] w-5">
-              <span
-                className={`block h-[1.5px] bg-white transition-all duration-300 origin-center ${
-                  menuOpen ? "rotate-45 translate-y-[3.25px]" : ""
-                }`}
-              />
-              <span
-                className={`block h-[1.5px] bg-white transition-all duration-300 origin-center ${
-                  menuOpen ? "-rotate-45 -translate-y-[3.25px]" : ""
-                }`}
-              />
-            </div>
-          </button>
+          {/* Mobile: Квитки button + burger */}
+          <div className="md:hidden flex items-center gap-3">
+            <button
+              onClick={() => scrollTo("tour")}
+              className="text-xs font-semibold tracking-wider uppercase text-black bg-accent px-4 py-2 rounded-full min-h-[36px]"
+            >
+              Квитки
+            </button>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="relative w-11 h-11 flex items-center justify-center"
+              aria-label="Menu"
+            >
+              <div className="flex flex-col gap-[5px] w-5">
+                <span
+                  className={`block h-[1.5px] bg-white transition-all duration-300 origin-center ${
+                    menuOpen ? "rotate-45 translate-y-[3.25px]" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-[1.5px] bg-white transition-all duration-300 origin-center ${
+                    menuOpen ? "-rotate-45 -translate-y-[3.25px]" : ""
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
       </motion.nav>
 
-      {/* Mobile menu — fullscreen overlay */}
+      {/* Mobile menu — fullscreen */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -134,7 +141,7 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Social — bottom of overlay */}
+            {/* Social — bottom */}
             <div className="absolute bottom-16 left-0 right-0 flex justify-center gap-8">
               <a
                 href="https://www.instagram.com/cpt.guy/"

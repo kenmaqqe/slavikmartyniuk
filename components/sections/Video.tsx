@@ -15,10 +15,10 @@ export default function Video() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl uppercase tracking-tight mb-12 md:mb-20"
+          className="font-heading uppercase tracking-tight mb-12 md:mb-20"
           style={{ fontSize: "clamp(2.8rem, 8vw, 5rem)" }}
         >
-          Відео
+          Останній виступ
         </motion.h2>
 
         {/* Main video */}
@@ -43,6 +43,12 @@ export default function Video() {
               />
             )}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500" />
+            {/* Play icon */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <div className="w-0 h-0 border-l-[18px] border-l-white border-t-[11px] border-t-transparent border-b-[11px] border-b-transparent ml-1" />
+              </div>
+            </div>
             <div className="absolute bottom-0 left-0 p-4 md:p-10">
               <h3 className="font-heading text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide text-white line-clamp-2">
                 {main.title}
@@ -51,7 +57,7 @@ export default function Video() {
           </motion.a>
         )}
 
-        {/* Smaller videos — stack on mobile, row on desktop */}
+        {/* Smaller videos */}
         {rest.length > 0 && (
           <div className="flex flex-col md:flex-row gap-3">
             {rest.map((project, index) => (
@@ -86,7 +92,6 @@ export default function Video() {
           </div>
         )}
 
-        {/* Link to more */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -100,7 +105,7 @@ export default function Video() {
             rel="noopener noreferrer"
             className="text-sm text-text-secondary hover:text-white transition-colors duration-300"
           >
-            Інші відео →
+            Усі відео →
           </a>
         </motion.div>
       </div>
