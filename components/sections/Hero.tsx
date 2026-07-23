@@ -58,13 +58,13 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="md:col-span-3 relative aspect-[3/4] md:aspect-[2/3] w-full"
+          className="md:col-span-3 relative w-full h-[60vh] md:h-[85vh]"
         >
           <Image
-            src="/hero.jpg"
+            src="/hero.png"
             alt="Славік Мартинюк"
             fill
-            className="object-cover object-top"
+            className="object-contain object-bottom"
             priority
             quality={95}
             sizes="(max-width: 768px) 100vw, 60vw"
