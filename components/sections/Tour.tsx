@@ -15,7 +15,7 @@ export default function Tour() {
           className="font-heading text-5xl md:text-7xl lg:text-8xl uppercase tracking-tight mb-12 md:mb-20"
           style={{ fontSize: "clamp(2.8rem, 8vw, 5rem)" }}
         >
-          Тур
+          Концерти
         </motion.h2>
 
         <div className="border-t border-white/10">

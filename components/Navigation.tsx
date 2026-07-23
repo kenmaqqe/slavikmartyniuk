@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { scrollTo } from "@/lib/scrollTo";
 
 const navLinks = [
-  { label: "Тур", target: "tour" },
+  { label: "Концерти", target: "tour" },
   { label: "Відео", target: "video" },
   { label: "Про мене", target: "about" },
   { label: "Контакти", target: "footer" },
