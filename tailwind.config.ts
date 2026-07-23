@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#000000",
-        surface: "#0A0A0A",
+        background: "#080808",
+        surface: "#121212",
         "text-primary": "#FFFFFF",
-        "text-secondary": "#666666",
-        accent: "#FFFFFF",
+        "text-secondary": "#8B8B8B",
+        accent: "#18C7C1",
       },
       fontFamily: {
         heading: ["var(--font-heading)", "sans-serif"],

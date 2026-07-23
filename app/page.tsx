@@ -1,17 +1,25 @@
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/sections/Hero";
-import ShowsList from "@/components/sections/ShowsList";
-import ProjectsGrid from "@/components/sections/ProjectsGrid";
-import CharitySection from "@/components/sections/CharitySection";
+import Tour from "@/components/sections/Tour";
+import PhotoSection from "@/components/sections/PhotoSection";
+import Video from "@/components/sections/Video";
+import Bio from "@/components/sections/Bio";
+import Stats from "@/components/sections/Stats";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <Hero />
-      <ShowsList />
-      <ProjectsGrid />
-      <CharitySection />
-      <Footer />
-    </main>
+    <>
+      <Navigation />
+      <main>
+        <Hero />
+        <Tour />
+        <PhotoSection />
+        <Video />
+        <Bio />
+        <Stats />
+        <Footer />
+      </main>
+    </>
   );
 }

@@ -20,51 +20,28 @@ const siteUrl = "https://slavikmartyniuk.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Славік Мартинюк — Stand-up Comedian & Creator",
+    default: "Славік Мартинюк — Stand-up Comedian",
     template: "%s | Славік Мартинюк",
   },
   description:
-    "Стендап-комік Славік Мартинюк. Медичні Історії, Я ніколи не... — квитки на шоу, YouTube-проєкти, соціальні мережі.",
-  keywords: [
-    "Славік Мартинюк",
-    "стендап",
-    "комік",
-    "stand-up",
-    "Медичні Історії",
-    "Я ніколи не",
-    "концерти",
-    "квитки",
-  ],
-  authors: [{ name: "Славік Мартинюк" }],
-  creator: "Славік Мартинюк",
+    "Стендап-комік. Автор «Медичних історій». Квитки на шоу, YouTube, контакти.",
   openGraph: {
     type: "website",
     locale: "uk_UA",
     url: siteUrl,
     siteName: "Славік Мартинюк",
-    title: "Славік Мартинюк — Stand-up Comedian & Creator",
+    title: "Славік Мартинюк — Stand-up Comedian",
     description:
-      "Стендап-комік Славік Мартинюк. Медичні Історії, Я ніколи не... — квитки на шоу та YouTube-проєкти.",
-    images: [
-      {
-        url: "/hero.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Славік Мартинюк — Stand-up Comedian",
-      },
-    ],
+      "Стендап-комік. Автор «Медичних історій». Квитки на шоу, YouTube, контакти.",
+    images: [{ url: "/hero.jpg", width: 1200, height: 630, alt: "Славік Мартинюк" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Славік Мартинюк — Stand-up Comedian & Creator",
-    description:
-      "Стендап-комік Славік Мартинюк. Медичні Історії, Я ніколи не... — квитки на шоу та YouTube-проєкти.",
+    title: "Славік Мартинюк — Stand-up Comedian",
+    description: "Стендап-комік. Автор «Медичних історій».",
     images: ["/hero.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

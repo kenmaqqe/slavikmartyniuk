@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-color: #000000;
+  background-color: #080808;
   color: #ffffff;
   font-family: var(--font-body), sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +22,7 @@ body {
 }
 
 ::selection {
-  background-color: #ffffff;
+  background-color: #18C7C1;
   color: #000000;
 }
 
