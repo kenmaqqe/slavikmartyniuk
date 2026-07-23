@@ -9,12 +9,8 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden">
       {/* Mobile */}
       <div className="md:hidden relative min-h-screen flex flex-col">
-        {/* Photo — absolute, bottom, with floor shadow */}
-        <div className="absolute inset-x-0 bottom-0 h-[55vh] z-0">
-          {/* Floor shadow */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06)_0%,transparent_70%)]" />
-          {/* Decorative line — "floor" */}
-          <div className="absolute bottom-6 left-[10%] right-[10%] h-px bg-white/[0.06]" />
+        {/* Photo — top */}
+        <div className="relative w-full h-[50vh] mt-14 z-0">
           <Image
             src="/hero.png"
             alt="Славік Мартинюк"
@@ -22,12 +18,15 @@ export default function Hero() {
             className="object-contain object-bottom"
             priority
             quality={90}
-            sizes="(max-width: 768px) 100vw, 60vw"
+            sizes="100vw"
           />
+          {/* Floor shadow */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06)_0%,transparent_70%)]" />
+          <div className="absolute bottom-4 left-[10%] right-[10%] h-px bg-white/[0.06]" />
         </div>
 
-        {/* Text — top */}
-        <div className="relative z-10 flex-1 flex flex-col justify-start px-5 pt-24 pb-8">
+        {/* Text — below photo */}
+        <div className="relative z-10 px-5 pt-8 pb-12">
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
